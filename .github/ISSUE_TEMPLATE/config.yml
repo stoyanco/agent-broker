@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security reports
+    about: Report sensitive vulnerabilities privately instead of opening a public issue.
+    url: https://github.com/stoyanco/agent-broker/security/advisories/new

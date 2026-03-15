@@ -1,0 +1,72 @@
+{
+  "name": "agent-broker",
+  "version": "0.4.0",
+  "description": "Local MCP broker that lets Codex consult other agent runtimes for patches, reviews, and second opinions.",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "bin": {
+    "agent-broker": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "scripts/register-codex.mjs",
+    "scripts/smoke-agent.mjs",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "LICENSE",
+    "PROVIDER_CAPABILITIES.md",
+    "RELEASE.md",
+    "SECURITY.md",
+    "AGENTS.md",
+    "AI_SETUP.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsx --test tests/**/*.test.ts",
+    "check": "npm run build && npm run typecheck && npm test && npm run pack:check",
+    "start": "tsx src/cli.ts",
+    "register:codex": "node scripts/register-codex.mjs",
+    "pack:check": "npm pack --dry-run",
+    "smoke:agent": "node scripts/smoke-agent.mjs"
+  },
+  "keywords": [
+    "codex",
+    "agent",
+    "broker",
+    "claude",
+    "gemini",
+    "mcp",
+    "patch",
+    "review",
+    "assistant"
+  ],
+  "author": "Aleksa Stojanovic",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoyanco/agent-broker.git"
+  },
+  "homepage": "https://github.com/stoyanco/agent-broker",
+  "bugs": {
+    "url": "https://github.com/stoyanco/agent-broker/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
