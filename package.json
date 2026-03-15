@@ -1,6 +1,6 @@
 {
   "name": "agent-broker",
-  "version": "0.4.0",
+  "version": "0.1.0",
   "description": "Local MCP broker that lets Codex consult other agent runtimes for patches, reviews, and second opinions.",
   "private": true,
   "type": "module",
